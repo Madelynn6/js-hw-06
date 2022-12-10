@@ -5,9 +5,11 @@ const textLength = Number(textInput.getAttribute("data-length"));
 textInput.addEventListener("blur", (event) => 
 {
     if(event.target.value.length === textLength){
-        textInput.classList.toggle("valid")
+        textInput.classList.add("valid")
+        textInput.classList.remove("invalid")
     } else {
-        textInput.classList.toggle("invalid")
+        textInput.classList.add("invalid")
+        textInput.classList.remove("valid")
     }
 
 } 
