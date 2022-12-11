@@ -6,13 +6,12 @@ const input = document.querySelector("input");
 const addBtn = document.querySelector('button[data-create]');
 const removeBtn = document.querySelector('button[data-destroy]');
 const divOuter = document.querySelector("#boxes");
-const divs = document.querySelector("#boxes div")
+
 
 
 function createBoxes (amount){
   input.addEventListener("input", (event) => {
   amount = event.currentTarget.value;
-  console.log(amount)
 })
 
   addBtn.addEventListener("click", () =>{
@@ -23,16 +22,16 @@ function createBoxes (amount){
       newDiv.style.height = 30 + 10*i + "px";
       newDiv.style.backgroundColor = getRandomHexColor();
     }
-
-  console.log(amount)
 }
   )
 }
 
 function destroyBoxes(){
-  removeBtn.addEventListener("click", () =>
-  divs.remove())
-}
+  removeBtn.addEventListener("click", () => {
+    divOuter.innerHTML = ""})
+  }
+
+
 createBoxes();
 destroyBoxes();
 
